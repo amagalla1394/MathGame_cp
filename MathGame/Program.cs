@@ -7,7 +7,7 @@ var name = Console.ReadLine();
 var date = DateTime.UtcNow;
 
 Console.WriteLine("-----------------------------------------------------------");
-Console.WriteLine($"Hello {name}. It's {date.DayOfWeek}. This is your math's game. That's great that you're working on improving yourself\n");
+Console.WriteLine($"Hello {name}. It's {date.DayOfWeek}. This is your math game. That's great that you're working on improving yourself\n");
 Console.WriteLine($@"What game would you like to play today? Choose from the options below:
 A - Addition
 S - Subtraction
@@ -37,8 +37,7 @@ else if (gameSelected.Trim().ToLower() == "d")
 }
 else if (gameSelected.Trim().ToLower() == "q")
 {
-    Console.WriteLine("Goodbye");
-    Environment.Exit(1);
+    ExitGame();
 }
 else
 {
@@ -60,6 +59,11 @@ void MultiplicationGame()
 void DivisionGame()
 {
     Console.WriteLine("Division game selected");
+}
+void ExitGame()
+{
+    Console.WriteLine("Goodbye");
+    Environment.Exit(1);
 }
 
 
