@@ -65,18 +65,3 @@ void ExitGame()
     Console.WriteLine("Goodbye");
     Environment.Exit(1);
 }
-
-
-/*
-int index = 1;
-string name = "Pablo";
-char initial = 'P';
-
-//use $@
-string myParagraph = $@"This is pretty nifty for cleaner code  
-{index++} - string, example: {name}
-{index++} - char, example: {initial}";
-
-Console.WriteLine(myParagraph);
-Console.ReadLine();
-*/
