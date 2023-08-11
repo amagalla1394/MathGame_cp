@@ -47,17 +47,17 @@ Q - Quit the program");
 
 void AdditionGame(string message)
 {
-    //Console.WriteLine("Addition game selected");
+    Console.WriteLine("Addition game selected");
 }
 void SubtractionGame(string message)
 {
-    //Console.WriteLine("Subtraction game selected");
+    Console.WriteLine("Subtraction game selected");
 }
 void MultiplicationGame(string message)
 {
-    //Console.WriteLine("Multiplication game selected");
+    Console.WriteLine("Multiplication game selected");
 }
 void DivisionGame(string message)
 {
-    //Console.WriteLine("Division game selected");
+    Console.WriteLine("Division game selected");
 }
