@@ -1,11 +1,17 @@
-﻿//Calculator Math Game
-//Prompt user:
-Console.WriteLine("Please type your name: ");
-var name = Console.ReadLine();
+﻿
 var date = DateTime.UtcNow;
+string name = GetName();
 
-Menu(name, date);
-void Menu(string? name, DateTime date)
+Menu(name);
+
+string GetName()
+{
+    Console.WriteLine("Please type your name: ");
+    string name = Console.ReadLine();
+    return name;
+}
+
+void Menu(string name)
 {
     Console.WriteLine("-----------------------------------------------------------");
     Console.WriteLine($"Hello {name}. It's {date.DayOfWeek}. This is your math game. That's great that you're working on improving yourself\n");
@@ -45,19 +51,40 @@ Q - Quit the program");
     }
 }
 
-void AdditionGame(string message)
-{
-    Console.WriteLine("Addition game selected");
-}
+
+
 void SubtractionGame(string message)
 {
     Console.WriteLine("Subtraction game selected");
 }
+
 void MultiplicationGame(string message)
 {
     Console.WriteLine("Multiplication game selected");
 }
+
 void DivisionGame(string message)
 {
     Console.WriteLine("Division game selected");
+}
+
+void AdditionGame(string message)
+{
+    Console.WriteLine(message);
+
+    var random = new Random();
+    int firstNumber = random.Next(1, 9);
+    int secondNumber = random.Next(1, 9);
+
+    Console.WriteLine($"{firstNumber} + {secondNumber}");
+    string result = Console.ReadLine();
+
+    if(int.Parse(result) == firstNumber + secondNumber)
+    {
+        Console.WriteLine("your answer was correct!");
+    }
+    else
+    {
+        Console.WriteLine("Your answer was incorrect.");
+    }
 }
