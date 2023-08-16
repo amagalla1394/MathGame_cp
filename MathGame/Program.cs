@@ -1,6 +1,7 @@
-﻿
-var date = DateTime.UtcNow;
+﻿using System;
+
 string name = GetName();
+var date = DateTime.UtcNow;
 
 Menu(name);
 
@@ -30,7 +31,7 @@ Q - Quit the program");
     {
         case "a":
             AdditionGame("Addition game selected");
-            break;
+            break;  //the issue lies here.
         case "s":
             SubtractionGame("Subtraction game selected");
             break;
@@ -73,18 +74,29 @@ void AdditionGame(string message)
     Console.WriteLine(message);
 
     var random = new Random();
-    int firstNumber = random.Next(1, 9);
-    int secondNumber = random.Next(1, 9);
+    var score = 0;
 
-    Console.WriteLine($"{firstNumber} + {secondNumber}");
-    string result = Console.ReadLine();
+    int firstNumber;
+    int secondNumber;
 
-    if(int.Parse(result) == firstNumber + secondNumber)
+    for(int i = 0; i < 5; i++)
     {
-        Console.WriteLine("your answer was correct!");
-    }
-    else
-    {
-        Console.WriteLine("Your answer was incorrect.");
-    }
+        firstNumber = random.Next(1, 9);
+        secondNumber = random.Next(1, 9);
+
+        Console.WriteLine($"{firstNumber} + {secondNumber}");
+        var result = Console.ReadLine();
+
+        if (int.Parse(result) == firstNumber + secondNumber)
+        {
+            Console.WriteLine("your answer was correct!");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine("Your answer was incorrect.");
+        }
+
+        if(i == 4) Console.WriteLine($"Game over. Your final score is {score}");
+    }   
 }
