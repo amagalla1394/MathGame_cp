@@ -53,7 +53,6 @@ Q - Quit the program");
 }
 
 
-
 void SubtractionGame(string message)
 {
     Console.WriteLine("Subtraction game selected");
@@ -79,24 +78,34 @@ void AdditionGame(string message)
     int firstNumber;
     int secondNumber;
 
-    for(int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         firstNumber = random.Next(1, 9);
         secondNumber = random.Next(1, 9);
 
         Console.WriteLine($"{firstNumber} + {secondNumber}");
-        var result = Console.ReadLine();
+        var resultInput = Console.ReadLine();
 
-        if (int.Parse(result) == firstNumber + secondNumber)
+        try
         {
-            Console.WriteLine("your answer was correct!");
-            score++;
+            int result = int.Parse(resultInput);
+
+            if (result == firstNumber + secondNumber)
+            {
+                Console.WriteLine("Your answer was correct!");
+                score++;
+            }
+            else
+            {
+                Console.WriteLine("Your answer was incorrect.");
+            }
         }
-        else
+        catch (FormatException)
         {
-            Console.WriteLine("Your answer was incorrect.");
+            Console.WriteLine("Invalid input. Please enter a valid integer.");
+            i--; // Decrement the loop counter to repeat the current round.
         }
 
-        if(i == 4) Console.WriteLine($"Game over. Your final score is {score}");
+        if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
     }   
 }
