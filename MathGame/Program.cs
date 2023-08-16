@@ -84,6 +84,7 @@ void AdditionGame(string message)
         secondNumber = random.Next(1, 9);
 
         Console.WriteLine($"{firstNumber} + {secondNumber}");
+        //THE ISSUE LIES WITH THE READLINE. IT SHOULDN'T MATTER, JUST MOVE ON. need to fix.
         var resultInput = Console.ReadLine();
 
         try
