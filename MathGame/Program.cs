@@ -31,7 +31,7 @@ Q - Quit the program");
     {
         case "a":
             AdditionGame("Addition game selected");
-            break;  //the issue lies here.
+            break; 
         case "s":
             SubtractionGame("Subtraction game selected");
             break;
@@ -84,28 +84,18 @@ void AdditionGame(string message)
         secondNumber = random.Next(1, 9);
 
         Console.WriteLine($"{firstNumber} + {secondNumber}");
-        //THE ISSUE LIES WITH THE READLINE. IT SHOULDN'T MATTER, JUST MOVE ON. need to fix.
-        var resultInput = Console.ReadLine();
+        var result = Console.ReadLine();
 
-        try
+            
+        if (int.Parse(result) == firstNumber + secondNumber)
         {
-            int result = int.Parse(resultInput);
-
-            if (result == firstNumber + secondNumber)
-            {
-                Console.WriteLine("Your answer was correct!");
-                score++;
-            }
-            else
-            {
-                Console.WriteLine("Your answer was incorrect.");
-            }
+            Console.WriteLine("Your answer was correct!");
+            score++;
         }
-        catch (FormatException)
+        else
         {
-            Console.WriteLine("Invalid input. Please enter a valid integer.");
-            i--; // Decrement the loop counter to repeat the current round.
-        }
+            Console.WriteLine("Your answer was incorrect.");
+        }      
 
         if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
     }   
