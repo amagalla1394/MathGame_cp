@@ -52,7 +52,6 @@ Q - Quit the program");
     }
 }
 
-
 void SubtractionGame(string message)
 {
     Console.WriteLine("Subtraction game selected");
@@ -84,9 +83,9 @@ void AdditionGame(string message)
         secondNumber = random.Next(1, 9);
 
         Console.WriteLine($"{firstNumber} + {secondNumber}");
-        var result = Console.ReadLine();
 
-            
+        var result = Console.ReadLine();
+                    
         if (int.Parse(result) == firstNumber + secondNumber)
         {
             Console.WriteLine("Your answer was correct!");
