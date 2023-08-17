@@ -83,17 +83,17 @@ void AdditionGame(string message)
         secondNumber = random.Next(1, 9);
 
         Console.WriteLine($"{firstNumber} + {secondNumber}");
-
+        Console.WriteLine("What is the correct number?");
         var result = Console.ReadLine();
                     
         if (int.Parse(result) == firstNumber + secondNumber)
         {
-            Console.WriteLine("Your answer was correct!");
+            Console.WriteLine("Your answer was correct!\n");
             score++;
         }
         else
         {
-            Console.WriteLine("Your answer was incorrect.");
+            Console.WriteLine("Your answer was incorrect.\n");
         }      
 
         if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
