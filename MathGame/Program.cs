@@ -54,15 +54,71 @@ Q - Quit the program");
 
 void SubtractionGame(string message)
 {
-    Console.WriteLine("Subtraction game selected");
+    Console.WriteLine(message);
+
+    var random = new Random();
+    var score = 0;
+
+    int firstNumber;
+    int secondNumber;
+
+    for (int i = 0; i < 5; i++)
+    {
+        firstNumber = random.Next(1, 9);
+        secondNumber = random.Next(1, 9);
+
+        Console.WriteLine($"{firstNumber} - {secondNumber}");
+        Console.WriteLine("What is the correct number?");
+        var result = Console.ReadLine();
+
+        if (int.Parse(result) == firstNumber - secondNumber)
+        {
+            Console.WriteLine("Your answer was correct!\n");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine("Your answer was incorrect.\n");
+        }
+
+        if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
+    }
 }
 
 void MultiplicationGame(string message)
 {
-    Console.WriteLine("Multiplication game selected");
+    Console.WriteLine(message);
+
+    var random = new Random();
+    var score = 0;
+
+    int firstNumber;
+    int secondNumber;
+
+    for (int i = 0; i < 5; i++)
+    {
+        firstNumber = random.Next(1, 9);
+        secondNumber = random.Next(1, 9);
+
+        Console.WriteLine($"{firstNumber} * {secondNumber}");
+        Console.WriteLine("What is the correct number?");
+        var result = Console.ReadLine();
+
+        if (int.Parse(result) == firstNumber * secondNumber)
+        {
+            Console.WriteLine("Your answer was correct!\n");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine("Your answer was incorrect.\n");
+        }
+
+        if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
+    }
 }
 
-void DivisionGame(string message)
+void DivisionGame(string message) 
 {
     Console.WriteLine("Division game selected");
 }
