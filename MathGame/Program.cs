@@ -192,3 +192,14 @@ void RandomGame(string message)
         if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
     }
 }
+
+int[] GetDivisionNumbers()
+{
+    var random = new Random();
+    var firstNumber = random.Next(0, 99);
+    var secondNumber = random.Next(0, 99);
+
+    var result = new int[2];
+
+    return result;
+}
