@@ -196,7 +196,7 @@ void AdditionGame(string message)
 
         if (i == 4) 
         { 
-            Console.WriteLine($"Game over. Your final score is {score}. Press any key to go back to the main menu.\n");
+            Console.WriteLine($"Game over. Your final score is {score}. \nPress any key to go back to the main menu.");
             Console.ReadLine();
         
         }
