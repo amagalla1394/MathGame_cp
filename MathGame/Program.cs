@@ -23,6 +23,7 @@ void Menu(string name)
     {
         Console.Clear();
         Console.WriteLine($@"What game would you like to play today? Choose from the options below:
+            V - View Previous Games
             A - Addition
             S - Subtraction
             M - Multiplication
@@ -36,6 +37,9 @@ void Menu(string name)
 
         switch (gameSelected.Trim().ToLower())
         {
+            case "v":
+                GetGames();
+                break;
             case "a":
                 AdditionGame("Addition game");
                 break;
@@ -62,6 +66,20 @@ void Menu(string name)
         }
     } while (isGmaeOn);
     
+}
+
+void GetGames()
+{
+    Console.Clear();
+    Console.WriteLine("Games History");
+    Console.WriteLine("-------------------------");
+    foreach(var game in games)
+    {
+        Console.WriteLine(game);
+    }
+    Console.WriteLine("-------------------------\n");
+    Console.WriteLine("Press any key to return to the Main Menu");
+    Console.ReadLine();
 }
 
 void SubtractionGame(string message)
@@ -97,6 +115,8 @@ void SubtractionGame(string message)
 
         if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
     }
+
+    AddToHistory(score, "Subtraction");
 }
 
 void MultiplicationGame(string message)
@@ -132,6 +152,8 @@ void MultiplicationGame(string message)
 
         if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
     }
+
+    AddToHistory(score, "Multiplication");
 }
 
 void DivisionGame(string message) 
@@ -161,6 +183,8 @@ void DivisionGame(string message)
 
         if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
     }
+
+    AddToHistory(score, "Division");
 }
 
 void AdditionGame(string message)
@@ -197,10 +221,16 @@ void AdditionGame(string message)
         if (i == 4) 
         { 
             Console.WriteLine($"Game over. Your final score is {score}. \nPress any key to go back to the main menu.");
-            Console.ReadLine();
-        
+            Console.ReadLine();        
         }
     }
+
+    AddToHistory(score, "Addition");
+}
+
+void AddToHistory(int gameScore, string gameType)
+{
+    games.Add($"{DateTime.Now} - {gameType}: {gameScore} pts");
 }
 
 /*void RandomGame(string message)
