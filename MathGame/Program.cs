@@ -1,7 +1,7 @@
-﻿using System;
+﻿var date = DateTime.UtcNow;
 
+var games = new List<string>();
 string name = GetName();
-var date = DateTime.UtcNow;
 
 Menu(name);
 
