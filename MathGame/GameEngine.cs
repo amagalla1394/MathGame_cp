@@ -2,7 +2,7 @@
 {
     internal class GameEngine
     {
-        void SubtractionGame(string message)
+        internal void SubtractionGame(string message)
         {
             Console.WriteLine(message);
 
@@ -36,10 +36,10 @@
                 if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
             }
 
-            AddToHistory(score, "Subtraction");
+            Helpers.AddToHistory(score, "Subtraction");
         }
 
-        void MultiplicationGame(string message)
+        internal void MultiplicationGame(string message)
         {
             Console.WriteLine(message);
 
@@ -73,16 +73,16 @@
                 if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
             }
 
-            AddToHistory(score, "Multiplication");
+            Helpers.AddToHistory(score, "Multiplication");
         }
 
-        void DivisionGame(string message)
+        internal void DivisionGame(string message)
         {
             var score = 0;
 
             for (int i = 0; i < 5; i++)
             {
-                var divisionNumbers = GetDivisionNumbers();
+                var divisionNumbers = Helpers.GetDivisionNumbers();
                 var firstNumber = divisionNumbers[0];
                 var secondNumber = divisionNumbers[1];
 
@@ -104,10 +104,10 @@
                 if (i == 4) { Console.WriteLine($"Game over. Your final score is {score}"); }
             }
 
-            AddToHistory(score, "Division");
+            Helpers.AddToHistory(score, "Division");
         }
 
-        void AdditionGame(string message)
+        internal void AdditionGame(string message)
         {
             Console.WriteLine(message);
 
@@ -145,7 +145,7 @@
                 }
             }
 
-            AddToHistory(score, "Addition");
+            Helpers.AddToHistory(score, "Addition");
         }
 
     }
